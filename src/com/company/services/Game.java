@@ -100,7 +100,7 @@ public class Game {
      * can continue.
      */
     private boolean playerLose() {
-        return (attempt == 1);
+        return (attempt == 0);
     }
 
     /**
@@ -130,11 +130,6 @@ public class Game {
      * it may notice to the player his/her win, his/her lose, ask for another letter or exit from the program.
      */
     private void askLetter() {
-        System.out.println();
-        showWord();
-        System.out.print("What letter do you think is missing? ");
-        String letter = input.nextLine();
-
         if (playerWon()) {
             System.out.println("Congratulations, you win!");
             return;
@@ -145,6 +140,11 @@ public class Game {
             System.out.println("The word was: "+new String(wordChars));
             return;
         }
+
+        System.out.println();
+        showWord();
+        System.out.print("What letter do you think is missing? ");
+        String letter = input.nextLine();
 
         actions(guessLetter(letter.toUpperCase()));
     }
