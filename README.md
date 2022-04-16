@@ -14,7 +14,7 @@ It perform basic operations:
 - if the user guess all the letter the game will quit, informing the user that he found the word.
 
 # logic
-I used a char[] to represent the word. All letters and the user input are converted to their capitalized form .
-I used a Set<Character> to store the guessed letters and a String Set containing QUIT and EXIT to control if the player want to quit.
-I used a Map<Character, List<Integer>> that is populated with letters[... list of index] to speed up the control avoiding array cycle that are slower than looking inside a HashMap, when a letter is inside the map it just change the char[index] retrieved from the HashMap List, to replace the _ with actual letter.
-When a letter is founded it is removed from map. When the map.size() is zero all letters have been found.
+- I used a char[] to represent the word. All letters and the user input are converted to their capitalized form .
+- I used a Set<Character> to store the guessed letters and a Set<String> containing QUIT and EXIT to control if the player want to quit.
+- I used a Map<Character, List<Integer>> that is populated with letters[... list of index] to speed up the control avoiding array cycle that are slower than looking inside a HashMap, when a letter is inside the map it just change the char[index] retrieved from the HashMap List, to replace the _ with actual letter.
+- When a letter is founded it is removed from map. When the map.size() is zero all letters have been found.
